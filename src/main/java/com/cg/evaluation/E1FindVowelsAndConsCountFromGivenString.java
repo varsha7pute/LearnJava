@@ -1,6 +1,6 @@
 package com.cg.evaluation;
 
-public class Evaluation1FindVowelsAndConsCountFromGivenString {
+public class E1FindVowelsAndConsCountFromGivenString {
     public static void main(String[] args) {
         /* uncomment below code- if you want to get a input from user
         Scanner sc= new Scanner(System.in);

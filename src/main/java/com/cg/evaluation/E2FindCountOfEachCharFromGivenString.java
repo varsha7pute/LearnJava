@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class Evaluation2FindCountOfEachCharFromGivenString {
+public class E2FindCountOfEachCharFromGivenString {
 
     public static void main(String[] args) {
         String givenInput = "String data to count each character";
