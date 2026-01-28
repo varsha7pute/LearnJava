@@ -17,10 +17,8 @@ public class E3FindEmpCountInEachDept {
                 new EmpDeptInfo("Opq", "Mgmt")
         ) ;
 
-        Map<String, Long> empCountInEachDept =
-                empDeptInfoList.stream()
-                        .collect(Collectors.groupingBy(EmpDeptInfo::deptName, Collectors.counting()));
-
+       Map<String, Long> empCountInEachDept = empDeptInfoList.stream()
+               .collect(Collectors.groupingBy(EmpDeptInfo::deptName, Collectors.counting()));
         System.out.println("Emp count in each department "+ empCountInEachDept);
     }
 }

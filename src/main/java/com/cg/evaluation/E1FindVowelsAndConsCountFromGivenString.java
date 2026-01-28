@@ -1,5 +1,9 @@
 package com.cg.evaluation;
 
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 public class E1FindVowelsAndConsCountFromGivenString {
     public static void main(String[] args) {
         /* uncomment below code- if you want to get a input from user
@@ -10,8 +14,9 @@ public class E1FindVowelsAndConsCountFromGivenString {
         String str = "Communication";
         int[] count = new int[2];
         //java8
-        str.toLowerCase().chars().forEach(
-                ch -> {
+        str.toLowerCase()
+                .chars()
+                .forEach(ch -> {
                     if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
                         count[0]++;
                     else
@@ -31,5 +36,21 @@ public class E1FindVowelsAndConsCountFromGivenString {
                 cnt[1]++;
 
         System.out.println("java7 :: Vowel count = " + cnt[0] + " Consonant = " + cnt[1]);
+
+        //count vowels,cons, and numbers
+        String str1 = "Varsha7pute";
+         Map<String, Long> map= str1.toLowerCase().chars()
+                 .mapToObj( ch -> {
+                     if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+                         return  "Vowels";
+                     else if (ch >= 'a' && ch <= 'z')
+                        return "Consonant";
+                     else
+                         return "Other";
+                         })
+                 .collect(Collectors.groupingBy(category -> category, Collectors.counting()));
+
+        System.out.println("String contains " + map);
+
     }
 }

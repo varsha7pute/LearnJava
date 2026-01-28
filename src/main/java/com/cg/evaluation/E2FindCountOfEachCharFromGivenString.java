@@ -10,16 +10,13 @@ public class E2FindCountOfEachCharFromGivenString {
     public static void main(String[] args) {
         String givenInput = "String data to count each character";
 
-        char[] charStr= givenInput.toCharArray();
-
         Map<Character, Long> frequencyMap=givenInput.toLowerCase()
                 .chars()
                 .mapToObj( ch -> (char) ch)
-                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+                .collect(Collectors.groupingBy(c -> c, Collectors.counting()));
+        //  .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
-        frequencyMap.forEach((k, v)-> System.out.print(v +":" + k ));
-
-
+        System.out.println(frequencyMap);
     }
 
 
