@@ -1,9 +1,8 @@
 package com.cg.evaluation;
 
-import java.util.LinkedHashSet;
 import java.util.stream.Collectors;
 
-public class MoganEvaUniqueChar {
+public class MorganEvaUniqueChar {
 
     String str = "Happy New Year";
    // Output :: "Hapy new yr"
